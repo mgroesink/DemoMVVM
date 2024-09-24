@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoMVVMWithToolkit.Models.ViewModels"
+             xmlns:conv="clr-namespace:DemoMVVMWithToolkit.Converters"
+             x:Class="DemoMVVMWithToolkit.MainPage"
+             
+    Title="Pokémon Viewer">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:ValidImageConverter x:Key="ImageConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <local:PokemonVM />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20"
+                 BackgroundColor="BurlyWood">
+
+        <Image WidthRequest="250"
+               HeightRequest="250"
+               Source="{Binding Pokemon.ImageURL, Converter={StaticResource ImageConverter}}"
+               Aspect="AspectFit"
+               Margin="25"
+               HorizontalOptions="Center">
+
+        </Image>
+        <Label Text="Naam:" />
+        <Entry Text="{Binding Pokemon.Name}" />
+
+        <Label Text="Type:" />
+        <Entry Text="{Binding Pokemon.Type}" />
+
+        <Label Text="ImageURL:" />
+        <Entry Text="{Binding Pokemon.ImageURL}" />
+
+        <Button VerticalOptions="EndAndExpand" HorizontalOptions="Center" Text="Update Pokémon"
+                Margin="0, 50, 50, 50"
+                Command="{Binding UpdatePokemonCommand}" />
+
+    </StackLayout>
+</ContentPage>

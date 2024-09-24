@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoMVVMWithoutToolkit", "DemoMVVMWithoutToolkit\DemoMVVMWithoutToolkit.csproj", "{4E4CBF41-D8D7-48AB-8C9D-33CA8B286249}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoMVVMWithToolkit", "DemoMVVMWithToolkit\DemoMVVMWithToolkit.csproj", "{32693E8C-D144-40D8-B4BB-3375B4716A6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{4E4CBF41-D8D7-48AB-8C9D-33CA8B286249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E4CBF41-D8D7-48AB-8C9D-33CA8B286249}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E4CBF41-D8D7-48AB-8C9D-33CA8B286249}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{32693E8C-D144-40D8-B4BB-3375B4716A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32693E8C-D144-40D8-B4BB-3375B4716A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32693E8C-D144-40D8-B4BB-3375B4716A6B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{32693E8C-D144-40D8-B4BB-3375B4716A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32693E8C-D144-40D8-B4BB-3375B4716A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32693E8C-D144-40D8-B4BB-3375B4716A6B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
