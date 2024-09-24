@@ -15,7 +15,6 @@ namespace DemoMVVMWithoutToolkit.Models.ViewModels
         public event PropertyChangedEventHandler? PropertyChanged;
 
         private Pokemon _pokemon;
-        private string _validationErrors = string.Empty;
 
         public PokemonVM()
         {
@@ -23,7 +22,8 @@ namespace DemoMVVMWithoutToolkit.Models.ViewModels
             _pokemon = new Pokemon
             {
                 Name = "Pikachu",
-                Type = "Electric"
+                Type = "Electric",
+                ImageURL = "pokemon1.jpg"
             };
             UpdateCommand = new Command(UpdatePokemon);
         }
@@ -42,14 +42,12 @@ namespace DemoMVVMWithoutToolkit.Models.ViewModels
             }
         }
 
-        [Required(ErrorMessage = "{0} is verplicht")]
-        [StringLength(50, ErrorMessage = "{0} mag maximaal {1} karakters bevatten")]
         public string Type
         {
             get => _pokemon.Type;
             set
             {
-                if (_pokemon.Type != value)
+               if (_pokemon.Type != value)
                 {
                     _pokemon.Type = value;
                     OnPropertyChanged();
@@ -57,16 +55,29 @@ namespace DemoMVVMWithoutToolkit.Models.ViewModels
             }
         }
 
-        public ICommand UpdateCommand { get; }
-        public string ValidationErrors
+        public string ImageURL
         {
-            get { return _validationErrors; }
+            get => _pokemon.ImageURL;
             set
             {
-                _validationErrors = value;
-                OnPropertyChanged(nameof(ValidationErrors));
+                if (_pokemon.ImageURL != value)
+                {
+                    _pokemon.ImageURL = value;
+                    OnPropertyChanged();
+                }
             }
         }
+
+        public Color BackgroundColor
+        {
+            get
+            {
+                Random r = new Random();
+                return Color.FromRgb(r.Next(255), r.Next(255), r.Next(255));
+            }
+        }
+
+        public ICommand UpdateCommand { get; }
 
         private void UpdatePokemon()
         {
@@ -80,21 +91,6 @@ namespace DemoMVVMWithoutToolkit.Models.ViewModels
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public bool Validate()
-        {
-            var validationContext = new ValidationContext(_pokemon);
-            var results = new List<ValidationResult>();
-
-            bool isValid = Validator.TryValidateObject(_pokemon, validationContext, results, true);
-
-            if (!isValid)
-            {
-                ValidationErrors = string.Join("\n", results.Select(r => r.ErrorMessage));
-            }
-
-            return isValid;
         }
 
     }

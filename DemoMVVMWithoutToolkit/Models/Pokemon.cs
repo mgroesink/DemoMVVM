@@ -10,10 +10,8 @@ namespace DemoMVVMWithoutToolkit.Models
 
     public class Pokemon
     {
-        [Required(ErrorMessage = "{0} is verplicht")]
-        [StringLength(100, ErrorMessage = "{0} mag maximaal {1} karakters bevatten")] 
         public string Name { get; set; } = string.Empty;
-        [Required(ErrorMessage = "{0} is verplicht")]
-        [StringLength(50, ErrorMessage = "{0} mag maximaal {1} karakters bevatten")] public string Type { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
+        public string ImageURL { get; set; } = string.Empty;
     }
 }

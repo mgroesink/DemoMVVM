@@ -9,16 +9,29 @@
         <local:PokemonVM />
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="20">
+    <StackLayout Padding="20"
+                 BackgroundColor="Bisque">
 
+        <Image WidthRequest="250"
+               HeightRequest="250"
+               Source="{Binding ImageURL}"
+               Aspect="AspectFit"
+               Margin="25"
+               HorizontalOptions="Center"/>
         <Label Text="Pokémon Name:" />
         <Entry Text="{Binding Name}" />
 
         <Label Text="Pokémon Type:" />
         <Entry Text="{Binding Type}" />
 
+        <Label Text="ImageURL:" />
+        <Entry Text="{Binding ImageURL}" />
+
         <Button Text="Update Pokémon"
                 Command="{Binding UpdateCommand}" />
+
+        <!-- Validatiefouten weergeven -->
+        <Label Text="{Binding ValidationErrors}" TextColor="Red" />
 
     </StackLayout>
 </ContentPage>

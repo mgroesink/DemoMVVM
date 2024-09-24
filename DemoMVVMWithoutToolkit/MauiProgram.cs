@@ -11,6 +11,7 @@ namespace DemoMVVMWithoutToolkit
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
+                    fonts.AddFont("PlaywriteDEGrund-VariableFont_wght.ttf", "PlayWriteGE");
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
