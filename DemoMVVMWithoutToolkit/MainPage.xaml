@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoMVVMWithoutToolkit.Models.ViewModels"
+             x:Class="DemoMVVMWithoutToolkit.MainPage"
+    Title="Pokémon Viewer">
+
+    <ContentPage.BindingContext>
+        <local:PokemonVM />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+
+        <Label Text="Pokémon Name:" />
+        <Entry Text="{Binding Name}" />
+
+        <Label Text="Pokémon Type:" />
+        <Entry Text="{Binding Type}" />
+
+        <Button Text="Update Pokémon"
+                Command="{Binding UpdateCommand}" />
+
+    </StackLayout>
+</ContentPage>
