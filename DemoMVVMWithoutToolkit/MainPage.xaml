@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DemoMVVMWithoutToolkit.Models.ViewModels"
              x:Class="DemoMVVMWithoutToolkit.MainPage"
+             
     Title="Pokémon Viewer">
 
     <ContentPage.BindingContext>
@@ -18,20 +19,18 @@
                Aspect="AspectFit"
                Margin="25"
                HorizontalOptions="Center"/>
-        <Label Text="Pokémon Name:" />
+        <Label Text="Naam:" />
         <Entry Text="{Binding Name}" />
 
-        <Label Text="Pokémon Type:" />
+        <Label Text="Type:" />
         <Entry Text="{Binding Type}" />
 
         <Label Text="ImageURL:" />
         <Entry Text="{Binding ImageURL}" />
 
-        <Button Text="Update Pokémon"
+        <Button VerticalOptions="EndAndExpand" HorizontalOptions="Center" Text="Update Pokémon"
+                Margin="0, 50, 50, 50"
                 Command="{Binding UpdateCommand}" />
-
-        <!-- Validatiefouten weergeven -->
-        <Label Text="{Binding ValidationErrors}" TextColor="Red" />
 
     </StackLayout>
 </ContentPage>
