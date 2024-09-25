@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:DemoMVVMWithToolkit.Models.ViewModels"
              xmlns:conv="clr-namespace:DemoMVVMWithToolkit.Converters"
              x:Class="DemoMVVMWithToolkit.MainPage"
-             
+             SizeChanged="OnSizeChanged"
     Title="Pokémon Viewer">
 
     <ContentPage.Resources>
@@ -16,29 +16,40 @@
         <local:PokemonVM />
     </ContentPage.BindingContext>
 
-    <StackLayout Padding="20"
-                 BackgroundColor="BurlyWood">
+    <Grid x:Name="MainGrid" Padding="20" BackgroundColor="Bisque">
+        <!-- Define the default layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Image WidthRequest="250"
+        <!-- Image in the first row -->
+        <Image x:Name="PokemonImage"
+               Grid.Row="0"
+               WidthRequest="250"
                HeightRequest="250"
-               Source="{Binding Pokemon.ImageURL, Converter={StaticResource ImageConverter}}"
+               Source="{Binding Pokemon.ImageURL}"
                Aspect="AspectFit"
-               Margin="25"
-               HorizontalOptions="Center">
+               HorizontalOptions="Center" />
 
-        </Image>
-        <Label Text="Naam:" />
-        <Entry Text="{Binding Pokemon.Name}" />
+        <!-- StackLayout with text fields in the second row -->
+        <StackLayout x:Name="InfoStackLayout" Grid.Row="1" Margin="20,0">
+            <Label Text="Naam:" />
+            <Entry Text="{Binding Pokemon.Name}" />
 
-        <Label Text="Type:" />
-        <Entry Text="{Binding Pokemon.Type}" />
+            <Label Text="Type:" />
+            <Entry Text="{Binding Pokemon.Type}" />
 
-        <Label Text="ImageURL:" />
-        <Entry Text="{Binding Pokemon.ImageURL}" />
+            <Label Text="ImageURL:" />
+            <Entry Text="{Binding Pokemon.ImageURL}" />
 
-        <Button VerticalOptions="EndAndExpand" HorizontalOptions="Center" Text="Update Pokémon"
-                Margin="0, 50, 50, 50"
-                Command="{Binding UpdatePokemonCommand}" />
-
-    </StackLayout>
+            <Button Text="Update Pokémon"
+                    Command="{Binding UpdatePokemonCommand}" 
+                    Margin="0,50,50,50"
+                    HorizontalOptions="Center" />
+        </StackLayout>
+    </Grid>
 </ContentPage>
