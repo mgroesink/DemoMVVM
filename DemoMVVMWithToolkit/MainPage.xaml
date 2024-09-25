@@ -48,7 +48,7 @@
 
             <Button Text="Update Pokémon"
                     Command="{Binding UpdatePokemonCommand}" 
-                    Margin="0,50,50,50"
+                    Margin="50,50,50,50"
                     HorizontalOptions="Center" />
         </StackLayout>
     </Grid>
