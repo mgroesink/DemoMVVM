@@ -9,7 +9,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <conv:ValidImageConverter x:Key="ImageConverter"/>
+            <conv:ValidImageConverter x:Key="ImageConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.BindingContext>
@@ -47,7 +47,7 @@
             <Entry Text="{Binding Pokemon.ImageURL}" />
 
             <Button Text="Update Pokémon"
-                    Command="{Binding UpdatePokemonCommand}" 
+                    Command="{Binding UpdatePokemonCommand}"
                     Margin="50,50,50,50"
                     HorizontalOptions="Center" />
         </StackLayout>

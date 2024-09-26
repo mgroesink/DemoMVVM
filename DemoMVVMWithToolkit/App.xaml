@@ -10,22 +10,19 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="PlayWriteGE"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="PlayWriteGE" />
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="Purple" />
             </Style>
             <Style TargetType="Button">
-                <Setter Property="FontFamily" Value="PlayWriteGE"/>
+                <Setter Property="FontFamily" Value="PlayWriteGE" />
                 <Setter Property="TextColor" Value="Purple" />
-                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="BackgroundColor" Value="WhiteSmoke" />
-
-
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="FontFamily" Value="PlayWriteGE"/>
+                <Setter Property="FontFamily" Value="PlayWriteGE" />
                 <Setter Property="TextColor" Value="Black" />
-
             </Style>
         </ResourceDictionary>
     </Application.Resources>
